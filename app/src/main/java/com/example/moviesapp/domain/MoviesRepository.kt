@@ -22,4 +22,12 @@ class MoviesRepository(
            emit(resource)
        }.flowOn(dispatchers)
     }
+
+    suspend fun getMovieDetails(id : String) = flow {
+        emit(Resource.Loading)
+        val resource = safeApiCall {
+            apiService.getMovieDetails(id)
+        }
+        emit(resource)
+    }.flowOn(dispatchers)
 }

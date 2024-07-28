@@ -13,17 +13,22 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
+import coil.request.ImageRequest
 
 @Composable
 fun MoviesAppText(
     modifier: Modifier, text: String?, style: TextStyle = MaterialTheme.typography.titleMedium,
     color: Color = MaterialTheme.colorScheme.secondary,
-    textAlign: TextAlign = TextAlign.Start
+    textAlign: TextAlign = TextAlign.Start,
+    maxLines: Int = Int.MAX_VALUE,
+    overflow: TextOverflow = TextOverflow.Ellipsis
 ) {
     if (!text.isNullOrBlank()) {
         Text(
@@ -31,7 +36,9 @@ fun MoviesAppText(
             text = text,
             style = style,
             color = color,
-            textAlign = textAlign
+            textAlign = textAlign,
+            maxLines = maxLines,
+            overflow = overflow
         )
     }
 }
@@ -50,13 +57,10 @@ fun MoviesAppImage(modifier: Modifier, url: String?) {
     Log.d("Url", "Url " + url)
     if (!url.isNullOrBlank())
         AsyncImage(
-            modifier = modifier, model = url,
-            /*ImageRequest.Builder(LocalContext.current)
-                            .data(url)
-                            .setHeader(HeaderKeys.AUTHORIZATION, HeaderValues.TOKEN_TYPE + HeaderValues.ACCESS_TOKEN)
-                            .setHeader(HeaderKeys.ACCEPT, HeaderValues.CONTENT_TYPE_VALUE)
-                            .build()*/
-            contentDescription = "Movie",
+            modifier = modifier, model = ImageRequest.Builder(LocalContext.current)
+                .data(url)
+                .build(),
+            contentDescription = "Movie"
             /* colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.tertiary)*/
         )
 

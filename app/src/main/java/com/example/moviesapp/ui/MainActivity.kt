@@ -77,7 +77,7 @@ fun HomeNavGraph(navController: NavHostController, modifier: Modifier) {
 
 sealed class AppDestination(val route: String) {
     data object List : AppDestination("list")
-    data object Detail : AppDestination("detail/{MOVIE_ID}") {
+    data object Detail : AppDestination("detail/{movieId}") {
         fun createRoute(movieId: String) = "detail/$movieId"
     }
 }

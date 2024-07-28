@@ -18,7 +18,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.KeyboardArrowRight
-import androidx.compose.material.icons.filled.Star
 import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
@@ -34,6 +33,7 @@ import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.moviesapp.common.ui.MaterialAppCard
 import com.example.moviesapp.common.ui.MoviesAppImage
 import com.example.moviesapp.common.ui.MoviesAppText
+import com.example.moviesapp.common.ui.MoviesRatingRow
 import com.example.moviesapp.common.ui.UIState
 import com.example.moviesapp.ui.viewmodel.MoviesViewModel
 
@@ -75,7 +75,7 @@ fun MoviesScreen(
                     modifier = modifier,
                     cards = (uiState as UIState.Success<List<MovieItemCard>>).data
                 ) {
-                    if(!it.isNullOrBlank()) onCardClicked(it)
+                    if (!it.isNullOrBlank()) onCardClicked(it)
                 }
             }
         }
@@ -107,7 +107,7 @@ fun MoviesScreen(
         ) {
             items(items = it, key = { it.id }) { card ->
                 ItemCard(card = card) {
-                    onCardClicked("")
+                    onCardClicked(card.id)
                 }
             }
         }
@@ -138,30 +138,18 @@ private fun ItemCard(card: MovieItemCard?, onCardClicked: (String?) -> Unit) {
                 )
 
                 Column(
-                    modifier = Modifier.weight(0.7f), verticalArrangement = Arrangement.Center,
+                    modifier = Modifier.weight(0.7f), verticalArrangement = Arrangement.Top,
                     horizontalAlignment = Alignment.Start
                 ) {
                     MoviesAppText(
                         modifier = Modifier.wrapContentWidth(),
                         text = card.name,
                         color = MaterialTheme.colorScheme.secondary,
-                        textAlign = TextAlign.Start
+                        textAlign = TextAlign.Start,
+                        maxLines = 3
                     )
 
-                    Row(
-                        modifier = Modifier, horizontalArrangement = Arrangement.spacedBy(10.dp),
-                        verticalAlignment = Alignment.CenterVertically
-                    ) {
-                        MoviesAppImage(modifier = Modifier, vector = Icons.Default.Star)
-                        MoviesAppText(
-                            modifier = Modifier.wrapContentWidth(),
-                            text = card.avgVote,
-                            color = MaterialTheme.colorScheme.secondary,
-                            textAlign = TextAlign.End
-                        )
-                    }
-
-
+                    MoviesRatingRow(modifier = Modifier, card.avgVote)
                 }
 
                 MoviesAppImage(

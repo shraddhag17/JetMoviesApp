@@ -15,5 +15,5 @@ interface MoviesApiService {
     suspend fun getMovieDetails(
         @Path("MOVIE_ID") id: String,
         @Query("language") language: String = "en-US"
-    )
+    ) : Response<MovieDetailsResponse>
 }
