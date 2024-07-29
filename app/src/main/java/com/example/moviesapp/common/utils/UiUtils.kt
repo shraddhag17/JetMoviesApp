@@ -14,11 +14,11 @@ object UiUtils {
 
             }
         }
-        return vote ?: 0.0
+        return vote ?: 0.00
     }
 
     fun formatDuration(minutes: String?): String {
-        val totalMinutes = minutes?.toIntOrNull() ?: return minutes + "m"
+        val totalMinutes = minutes?.toIntOrNull() ?: return ""
 
         // Calculate hours and remaining minutes
         val hours = totalMinutes / 60
