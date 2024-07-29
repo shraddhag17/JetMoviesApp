@@ -1,8 +1,8 @@
 package com.example.moviesapp
 
-import com.example.moviesapp.domain.MovieItemResponse
-import com.example.moviesapp.domain.MoviesResponse
-import com.example.moviesapp.domain.MoviesUseCaseImpl
+import com.example.moviesapp.domain.data.MovieItemResponse
+import com.example.moviesapp.domain.data.MoviesResponse
+import com.example.moviesapp.domain.usecase.MoviesUseCaseImpl
 import com.example.moviesapp.ui.viewmodel.MoviesViewModel
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk

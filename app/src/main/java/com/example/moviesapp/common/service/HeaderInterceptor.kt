@@ -1,5 +1,7 @@
 package com.example.moviesapp.common.service
 
+import com.example.moviesapp.common.HeaderKeys
+import com.example.moviesapp.common.HeaderValues
 import com.example.moviesapp.common.utils.TokenUtils
 import okhttp3.Interceptor
 import okhttp3.Response

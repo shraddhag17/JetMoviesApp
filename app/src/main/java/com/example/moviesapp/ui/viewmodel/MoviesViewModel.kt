@@ -7,10 +7,10 @@ import androidx.lifecycle.viewModelScope
 import com.example.moviesapp.common.service.Resource
 import com.example.moviesapp.common.service.RetrofitService
 import com.example.moviesapp.common.ui.UIState
-import com.example.moviesapp.domain.MovieItemResponse
-import com.example.moviesapp.domain.MoviesRepository
-import com.example.moviesapp.domain.MoviesUseCaseImpl
-import com.example.moviesapp.ui.MovieItemCard
+import com.example.moviesapp.domain.data.MovieItemResponse
+import com.example.moviesapp.domain.repo.MoviesRepository
+import com.example.moviesapp.domain.usecase.MoviesUseCaseImpl
+import com.example.moviesapp.ui.model.MovieItemCard
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

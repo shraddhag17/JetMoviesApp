@@ -1,7 +1,7 @@
-package com.example.moviesapp.domain
+package com.example.moviesapp.domain.repo
 
-import com.example.moviesapp.common.service.BaseResponse
-import com.example.moviesapp.common.service.Resource
+import com.example.moviesapp.domain.data.MovieDetailsResponse
+import com.example.moviesapp.domain.data.MoviesResponse
 import retrofit2.Response
 import retrofit2.http.GET
 import retrofit2.http.Path

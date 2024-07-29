@@ -1,7 +1,8 @@
-package com.example.moviesapp.domain
+package com.example.moviesapp.domain.repo
 
 import com.example.moviesapp.common.service.BaseRepository
 import com.example.moviesapp.common.service.Resource
+import com.example.moviesapp.domain.data.MoviesResponse
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow

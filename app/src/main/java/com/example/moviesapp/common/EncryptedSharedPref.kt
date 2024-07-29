@@ -1,10 +1,9 @@
-package com.example.moviesapp.common.storage
+package com.example.moviesapp.common
 
 import android.content.Context
 import android.content.SharedPreferences
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKeys
-import com.example.moviesapp.common.service.PrefKeys
 
 object EncryptedSharedPref {
     private lateinit var sharedPreferences: SharedPreferences
@@ -28,9 +27,5 @@ object EncryptedSharedPref {
 
     fun getString(key : String): String? {
         return sharedPreferences.getString(key, null)
-    }
-
-    fun clearAll() {
-        sharedPreferences.edit().remove(PrefKeys.ACCESS_TOKEN).apply()
     }
 }

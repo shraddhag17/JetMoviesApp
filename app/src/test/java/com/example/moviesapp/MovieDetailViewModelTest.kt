@@ -1,7 +1,7 @@
 package com.example.moviesapp
 
-import com.example.moviesapp.domain.MovieDetailUseCaseImpl
-import com.example.moviesapp.domain.MovieDetailsResponse
+import com.example.moviesapp.domain.usecase.MovieDetailUseCaseImpl
+import com.example.moviesapp.domain.data.MovieDetailsResponse
 import com.example.moviesapp.ui.viewmodel.MoviesDetailViewModel
 import io.mockk.impl.annotations.MockK
 import io.mockk.mockk
@@ -11,7 +11,7 @@ import org.junit.Assert.assertNull
 import org.junit.Before
 import org.junit.Test
 
-class MoviesDetailViewModelTest {
+class MovieDetailViewModelTest {
     @MockK
     private lateinit var useCase: MovieDetailUseCaseImpl
 

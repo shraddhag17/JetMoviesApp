@@ -1,6 +1,7 @@
 package com.example.moviesapp.common.service
 
 import android.content.Context
+import com.example.moviesapp.common.AppConfig
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
@@ -28,13 +29,6 @@ object RetrofitService {
             .build()
     }
 
-
-    fun getBaseApiService(context: Context): BaseApiService? {
-        if (retrofit == null) {
-            retrofit = getRetrofitInstance(context)
-        }
-        return retrofit?.create(BaseApiService::class.java)
-    }
 
     fun getApiService(context: Context): BaseApiService {
         if (retrofit == null) {

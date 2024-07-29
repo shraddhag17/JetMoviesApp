@@ -1,4 +1,4 @@
-package com.example.moviesapp.common.service
+package com.example.moviesapp.common
 
 object HeaderKeys {
     const val AUTHORIZATION = "Authorization"

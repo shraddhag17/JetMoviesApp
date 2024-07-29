@@ -1,10 +1,10 @@
 package com.example.moviesapp
 
 import com.example.moviesapp.common.service.Resource
-import com.example.moviesapp.domain.MovieItemResponse
-import com.example.moviesapp.domain.MoviesRepository
-import com.example.moviesapp.domain.MoviesResponse
-import com.example.moviesapp.domain.MoviesUseCaseImpl
+import com.example.moviesapp.domain.data.MovieItemResponse
+import com.example.moviesapp.domain.repo.MoviesRepository
+import com.example.moviesapp.domain.data.MoviesResponse
+import com.example.moviesapp.domain.usecase.MoviesUseCaseImpl
 import io.mockk.MockKAnnotations
 import io.mockk.coEvery
 import io.mockk.impl.annotations.MockK

@@ -1,8 +1,11 @@
-package com.example.moviesapp.domain
+package com.example.moviesapp.domain.usecase
 
+import com.example.moviesapp.common.AppConfig
 import com.example.moviesapp.common.service.Resource
 import com.example.moviesapp.common.utils.DateUtils
 import com.example.moviesapp.common.utils.UiUtils
+import com.example.moviesapp.domain.data.MovieDetailsResponse
+import com.example.moviesapp.domain.repo.MoviesRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -19,7 +22,7 @@ class MovieDetailUseCaseImpl(
             repository.getMovieDetails(id).collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
-                        val baseUrl = "https://media.themoviedb.org/t/p/w220_and_h330_face"
+                        val baseUrl = AppConfig.PHOTO_DETAIL_BASE_URL
                         val model = resource.data?.copy(
                             url = "$baseUrl${resource.data.url}",
                             voteAverage = String.format(

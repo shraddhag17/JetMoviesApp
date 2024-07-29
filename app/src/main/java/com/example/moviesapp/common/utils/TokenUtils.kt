@@ -1,9 +1,8 @@
 package com.example.moviesapp.common.utils
 
-import android.util.Log
-import com.example.moviesapp.common.service.HeaderValues
-import com.example.moviesapp.common.service.PrefKeys
-import com.example.moviesapp.common.storage.EncryptedSharedPref
+import com.example.moviesapp.common.EncryptedSharedPref
+import com.example.moviesapp.common.HeaderValues
+import com.example.moviesapp.common.PrefKeys
 
 object TokenUtils {
 
@@ -16,7 +15,6 @@ object TokenUtils {
 
             return builder.toString()
         } catch (exception: Exception) {
-            Log.d("Token Exception", "Token exception "+ exception)
             //Report to firebase - This should never happen
         }
         return ""

@@ -33,6 +33,7 @@ import com.example.moviesapp.common.ui.MoviesAppImage
 import com.example.moviesapp.common.ui.MoviesAppText
 import com.example.moviesapp.common.ui.MoviesShowMoreLessText
 import com.example.moviesapp.common.ui.UIState
+import com.example.moviesapp.ui.model.MovieDetailModel
 import com.example.moviesapp.ui.viewmodel.MoviesDetailViewModel
 
 @Composable

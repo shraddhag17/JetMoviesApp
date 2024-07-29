@@ -8,10 +8,10 @@ import com.example.moviesapp.common.service.Resource
 import com.example.moviesapp.common.service.RetrofitService
 import com.example.moviesapp.common.ui.UIState
 import com.example.moviesapp.common.utils.DateUtils
-import com.example.moviesapp.domain.MovieDetailUseCaseImpl
-import com.example.moviesapp.domain.MovieDetailsResponse
-import com.example.moviesapp.domain.MoviesRepository
-import com.example.moviesapp.ui.MovieDetailModel
+import com.example.moviesapp.domain.usecase.MovieDetailUseCaseImpl
+import com.example.moviesapp.domain.data.MovieDetailsResponse
+import com.example.moviesapp.domain.repo.MoviesRepository
+import com.example.moviesapp.ui.model.MovieDetailModel
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.asStateFlow

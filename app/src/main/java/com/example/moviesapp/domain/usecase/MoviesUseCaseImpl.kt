@@ -1,6 +1,9 @@
-package com.example.moviesapp.domain
+package com.example.moviesapp.domain.usecase
 
+import com.example.moviesapp.common.AppConfig
 import com.example.moviesapp.common.service.Resource
+import com.example.moviesapp.domain.data.MoviesResponse
+import com.example.moviesapp.domain.repo.MoviesRepository
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.Flow
@@ -17,7 +20,7 @@ class MoviesUseCaseImpl(
             repository.fetchMovies().collect { resource ->
                 when (resource) {
                     is Resource.Success -> {
-                        val baseUrl = "https://media.themoviedb.org/t/p/w100_and_h100_face"
+                        val baseUrl = AppConfig.PHOTO_LIST_BASE_URL
                         val modifiedMovies = resource.data?.movies?.map { movie ->
                             movie.copy(
                                 url = "$baseUrl${movie.url}",
