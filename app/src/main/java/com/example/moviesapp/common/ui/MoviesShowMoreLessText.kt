@@ -39,7 +39,7 @@ fun MoviesShowMoreLessText(
             Text(
                 text = if (isExpanded) "Show Less" else "Show More",
                 modifier = Modifier.clickable { isExpanded = !isExpanded },
-                style = MaterialTheme.typography.labelMedium,
+                style = MaterialTheme.typography.labelSmall,
                 color = MaterialTheme.colorScheme.tertiary
             )
         }

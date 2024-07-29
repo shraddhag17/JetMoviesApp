@@ -1,5 +1,6 @@
 package com.example.moviesapp.common.service
 
+import com.example.moviesapp.common.utils.TokenUtils
 import okhttp3.Interceptor
 import okhttp3.Response
 
@@ -10,7 +11,7 @@ class HeaderInterceptor : Interceptor {
         val requestBuilder = originalRequest.newBuilder()
 
         requestBuilder
-            .header(HeaderKeys.AUTHORIZATION, HeaderValues.TOKEN_TYPE + HeaderValues.ACCESS_TOKEN)
+            .header(HeaderKeys.AUTHORIZATION, TokenUtils.getToken())
             .header(HeaderKeys.ACCEPT, HeaderValues.CONTENT_TYPE_VALUE)
         val request = requestBuilder.build()
 

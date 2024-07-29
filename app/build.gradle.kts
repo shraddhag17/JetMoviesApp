@@ -64,7 +64,7 @@ dependencies {
     implementation(libs.gson)
     implementation(libs.retrofit)
     implementation(libs.converter.gson)
-    implementation("io.coil-kt:coil-compose:2.7.0")
+    implementation(libs.coil.compose)
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
@@ -72,4 +72,15 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+   // androidTestImplementation(libs.mockk.android)
+    testImplementation(libs.mockk)
+    //testImplementation(libs.mockk.agent)
+    testImplementation(libs.truth)
+    // Add other dependencies required for your project
+    testImplementation(libs.kotlinx.coroutines.test)
+    testImplementation(libs.mockwebserver3)
+    implementation("androidx.security:security-crypto:1.1.0-alpha03")
+    //testImplementation("androidx.arch.core:core-testing:2.1.0")
+    /*testImplementation("org.slf4j:slf4j-api:1.7.32")
+    testImplementation("ch.qos.logback:logback-classic:1.2.6")*/
 }
