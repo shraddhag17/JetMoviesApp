@@ -13,11 +13,11 @@ data class MovieDetailsResponse(
     @SerializedName("vote_average")
     var voteAverage: Double? = null,
     @SerializedName("overview")
-    var overview: String?,
+    var overview: String? = null,
     @SerializedName("runtime")
-    var runtime: String?,
+    var runtime: String? = null,
     @SerializedName("release_date")
-    var releaseDate: String?
+    var releaseDate: String? = null
 ) {
-    var date : Date? = null
+    var date: Date? = null
 }

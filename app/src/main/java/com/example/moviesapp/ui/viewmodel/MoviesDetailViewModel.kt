@@ -54,7 +54,7 @@ class MoviesDetailViewModel(val useCase: MovieDetailUseCaseImpl) : ViewModel() {
     }
 
 
-    private fun getUICards(response: MovieDetailsResponse?): MovieDetailModel? {
+    fun getUICards(response: MovieDetailsResponse?): MovieDetailModel? {
         response?.let {
             if (!it.title.isNullOrBlank())
                 return MovieDetailModel(

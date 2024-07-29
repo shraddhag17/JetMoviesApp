@@ -24,13 +24,8 @@ class MoviesViewModel(private val useCase: MoviesUseCaseImpl) :
         MutableStateFlow(UIState.Loading)
     val uiState: StateFlow<UIState<List<MovieItemCard>>> = _uiState.asStateFlow()
 
-    init {
-        fetchMovies()
-    }
-
-    private fun fetchMovies() {
+    fun fetchMovies() {
         viewModelScope.launch {
-
             useCase.getMovies().catch { exception ->
                 _uiState.value = UIState.Error("Something went wrong, Please try again later")
             }.collect { resource ->
@@ -57,7 +52,7 @@ class MoviesViewModel(private val useCase: MoviesUseCaseImpl) :
     }
 
 
-    private fun getUICards(response: List<MovieItemResponse>?): List<MovieItemCard> {
+    fun getUICards(response: List<MovieItemResponse>?): List<MovieItemCard> {
         val cards: MutableList<MovieItemCard> = ArrayList()
         response?.forEach {
             if (!it.title.isNullOrBlank())
